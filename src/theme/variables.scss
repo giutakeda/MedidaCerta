@@ -12,6 +12,7 @@ $font-path: "../assets/fonts";
 $app-direction: ltr;
 
 
+
 @import "ionic.globals";
 
 
@@ -34,25 +35,47 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
+  primary:    #00aa8d,
+  secondary:  #455a64,
   danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  light:      #fff,
+  lighter:    #e0f2f1,
+  dark:       #222,
+  darker:     #008975,
+  fundo:      #f5f5f5,
+  ativo:      orange
 );
 
+$font-family-base: helvetica;
 
+$toolbar-background: color($colors, darker);
+
+$background-color: color($colors, fundo);
+
+$tabs-background: color($colors, darker);
+
+$label-md-text-color-focused: color($colors, secondary);
+$focus-outline-border-color: color($colors, secondary);
+$text-input-md-highlight-color: color($colors, secondary);
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
+$card-ios-margin-right: 0px;
+$card-ios-margin-left: 0px;
 
-
+$tabs-ios-tab-color-inactive: color($colors, light);
+$tabs-ios-tab-color-active: color($colors, ativo);
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
+$card-md-margin-right: 0px;
+$card-md-margin-left: 0px;
+
+$tabs-md-tab-color-inactive: color($colors, light);
+$tabs-md-tab-color-active: color($colors, ativo);
 
 
 

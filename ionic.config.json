@@ -1,6 +1,6 @@
 {
   "name": "MedidaCerta",
-  "app_id": "",
+  "app_id": "4e63097d",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

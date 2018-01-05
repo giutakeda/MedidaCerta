@@ -1,17 +1,28 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Mural</ion-title>
+    <ion-icon name="log-out" ></ion-icon>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <h2>Medida Certa</h2>
   <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
+    O aplicativo que te obriga a entrar em forma!!
   </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-card class="cartao" *ngFor="let mural of listaMural">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="http://giust.guy.jp/MedidaCerta/upload/{{mural.CodUsuario}}_Perfil.jpeg">
+      </ion-avatar>
+      <h2>{{ mural.NomeUsuario }}</h2>
+      <p>{{ mural.DataPostagem }} </p>
+    </ion-item>
+    <ion-card-content class="recado">
+      <p>{{ mural.Mensagem }}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
