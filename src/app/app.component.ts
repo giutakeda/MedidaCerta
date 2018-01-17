@@ -7,6 +7,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { PerfilProvider } from '../providers/perfil/perfil';
 import { MainPage } from '../pages/main/main';
+import { RankingPage} from '../pages/ranking/ranking';
 
 @Component({
   templateUrl: 'app.html',

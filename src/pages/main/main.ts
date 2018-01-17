@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MeusDadosPage } from '../meus-dados/meus-dados';
 import { PesagemPage } from '../pesagem/pesagem';
 import { HomePage } from '../home/home';
+import { RankingPage } from '../ranking/ranking';
 
 /**
  * Generated class for the MainPage page.
@@ -20,6 +21,7 @@ export class MainPage {
   public meusDadosPage = MeusDadosPage;
   public homePage = HomePage;
   public pesagemPage = PesagemPage;
+  public rankingPage = RankingPage;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

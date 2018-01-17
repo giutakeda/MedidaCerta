@@ -17,6 +17,7 @@ import { PerfilProvider } from '../providers/perfil/perfil';
 import { PesagemProvider } from '../providers/pesagem/pesagem';
 import { LoginProvider } from '../providers/login/login';
 import { MainPage } from '../pages/main/main';
+import { RankingPage } from '../pages/ranking/ranking';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { MainPage } from '../pages/main/main';
     TabsPage,
     LoginPage,
     PesagemPage,
-    MainPage
+    MainPage,
+    RankingPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ import { MainPage } from '../pages/main/main';
     LoginPage,
     PesagemPage,
     MeusDadosPage,
-    MainPage
+    MainPage,
+    RankingPage
   ],
   providers: [
     StatusBar,
