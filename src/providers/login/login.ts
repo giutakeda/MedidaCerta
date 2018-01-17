@@ -4,7 +4,7 @@ import { Http } from '@angular/http';
 
 @Injectable()
 export class LoginProvider {
-  private baseApiPath = "http://giust.guy.jp/MedidaCerta/mobile.php";
+  private baseApiPath = "https://yasetai.000webhostapp.com/mobile.php";
   private data;
   constructor(public http: Http) {
     console.log('Hello LoginProvider Provider');

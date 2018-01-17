@@ -15,7 +15,7 @@ export class MuralProvider {
   //private keypass = "a0cf0cebfebc3a753c8a9cd8f72acf68";
   private keypass = "a0cf0cebfebc3a753c8a9cd8f72acf68";
   //private baseApiPath = "https://api.themoviedb.org/3";
-  private baseApiPath = "http://giust.guy.jp/MedidaCerta/";
+  private baseApiPath = "https://yasetai.000webhostapp.com/";
   constructor(public http: Http) {
     console.log('Hello  Provider');
   }

@@ -80,7 +80,7 @@ export class PesagemPage {
     var config = JSON.parse(this.perfilProvider.getConfig());
     this.pesagemProvider.gravaPesagem(config.codUsuario, this.dataDefault, this.pesoDefault, this.gorduraDefault).subscribe(
       data => {
-        const response = (data as any);
+        const  response = (data as any);
         this.getPesagem();
         console.log(response);
       }, error => {
@@ -89,7 +89,7 @@ export class PesagemPage {
     );
   }
 
-  public apagaPesagem(codPesagem){
+  public apagaPesagem(codPesagem){ 
     alert(codPesagem);
     var config = JSON.parse(this.perfilProvider.getConfig());
     this.pesagemProvider.apagaPesagem(codPesagem).subscribe(

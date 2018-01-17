@@ -1,7 +1,6 @@
 <ion-header>
   <ion-navbar>
     <ion-title>Mural</ion-title>
-    <ion-icon name="log-out" ></ion-icon>
   </ion-navbar>
 </ion-header>
 
@@ -16,7 +15,7 @@
   <ion-card class="cartao" *ngFor="let mural of listaMural">
     <ion-item>
       <ion-avatar item-start>
-        <img src="http://giust.guy.jp/MedidaCerta/upload/{{mural.CodUsuario}}_Perfil.jpeg">
+        <img alt="sem imagem" src="https://yasetai.000webhostapp.com/upload/{{mural.CodUsuario}}_Perfil.jpeg">
       </ion-avatar>
       <h2>{{ mural.NomeUsuario }}</h2>
       <p>{{ mural.DataPostagem }} </p>

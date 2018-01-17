@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class PesagemProvider {
-  private baseApiPath = "http://giust.guy.jp/MedidaCerta/mobile.php";
+  private baseApiPath = "https://yasetai.000webhostapp.com/mobile.php";
   private opt;
   private header;
   private data;
@@ -20,7 +20,8 @@ export class PesagemProvider {
     //this.header = { "headers": {"Content-Type": "text/plain"} };
     //this.header = { "headers": {"Content-Type": "application/json"} };
     // return this.http.get('http://giust.guy.jp/MedidaCerta/getMural.php');
-    return this.http.post('http://giust.guy.jp/MedidaCerta/mobile.php', JSON.stringify(this.data));
+    //return this.http.post('http://giust.guy.jp/MedidaCerta/mobile.php', JSON.stringify(this.data));
+    return this.http.post('https://yasetai.000webhostapp.com/mobile.php', JSON.stringify(this.data));
   }
 
   public gravaPesagem(codUsuario, data, peso, fat){

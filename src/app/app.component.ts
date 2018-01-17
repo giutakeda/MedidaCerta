@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { PerfilProvider } from '../providers/perfil/perfil';
+import { MainPage } from '../pages/main/main';
 
 @Component({
   templateUrl: 'app.html',
@@ -34,7 +35,7 @@ export class MyApp {
       }else{
         config = JSON.parse(config);
         if(config.logado == true){
-          this.rootPage = TabsPage;
+          this.rootPage = MainPage;
         }else{
           this.rootPage = LoginPage;
         }
