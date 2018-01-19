@@ -4,6 +4,7 @@ import { MeusDadosPage } from '../meus-dados/meus-dados';
 import { PesagemPage } from '../pesagem/pesagem';
 import { HomePage } from '../home/home';
 import { RankingPage } from '../ranking/ranking';
+import { GraficosPage } from '../graficos/graficos';
 
 /**
  * Generated class for the MainPage page.
@@ -22,6 +23,7 @@ export class MainPage {
   public homePage = HomePage;
   public pesagemPage = PesagemPage;
   public rankingPage = RankingPage;
+  public graficosPage = GraficosPage;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

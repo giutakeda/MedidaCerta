@@ -12,16 +12,29 @@
   <p>
     O aplicativo que te obriga a entrar em forma!!
   </p>
-  <ion-card class="cartao" *ngFor="let mural of listaMural">
-    <ion-item>
-      <ion-avatar item-start>
-        <img alt="sem imagem" src="https://yasetai.000webhostapp.com/upload/{{mural.CodUsuario}}_Perfil.jpeg">
-      </ion-avatar>
-      <h2>{{ mural.NomeUsuario }}</h2>
-      <p>{{ mural.DataPostagem }} </p>
-    </ion-item>
-    <ion-card-content class="recado">
-      <p>{{ mural.Mensagem }}</p>
-    </ion-card-content>
-  </ion-card>
+  <ion-item>
+    <ion-textarea placeholder="Nova mensagem" type="text" [(ngModel)]="postagem"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <button full ion-button (click)="postarMensagem();">Postar</button>
+  </ion-item>
+
+  <ion-list >
+      <ion-item-sliding #item *ngFor="let mural of listaMural">
+        <ion-item text-wrap>
+            <ion-avatar item-start>
+                <img alt="sem imagem" src="https://yasetai.000webhostapp.com/upload/{{mural.CodUsuario}}_Perfil.jpeg">
+              </ion-avatar>
+              <h2>{{ mural.NomeUsuario }}</h2>
+              <p>{{ mural.DataPostagem }} </p>
+              <p class="recado">{{ mural.Mensagem }}</p>
+        </ion-item>
+        <ion-item-options side="right">
+            <button ion-button (click)="apagaMensagem(mural.CodBlog);" color="danger">
+              <ion-icon name="trash" ></ion-icon>
+              Apagar
+            </button>
+          </ion-item-options>
+      </ion-item-sliding>
+  </ion-list>
 </ion-content>

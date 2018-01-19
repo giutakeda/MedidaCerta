@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import { MuralProvider } from '../../providers/mural/mural';
+import { PerfilProvider } from '../../providers/perfil/perfil';
 
 @Component({
   selector: 'page-home',
@@ -14,8 +15,14 @@ export class HomePage {
   public loader;
   public refresher;
   public isRefreshing: boolean = false;
-
-  constructor(public navCtrl: NavController, private mural: MuralProvider, private loadingCtrl: LoadingController) {
+  public data;
+  public postagem;
+  constructor(
+    public navCtrl: NavController,
+    private mural: MuralProvider,
+    private loadingCtrl: LoadingController,
+    private perfilProvider: PerfilProvider
+  ) {
 
   }
 
@@ -24,6 +31,34 @@ export class HomePage {
 
   }
 
+  public postarMensagem() {
+    let config = this.perfilProvider.getConfig();
+    let config2 = JSON.parse(config);
+    this.mural.novaPostagem(config2.codUsuario, this.postagem).subscribe(
+      data=>{
+        const response = (data as any);
+        console.log(response);
+        this.getMural2();
+        this.postagem = "";
+    }, error=>{
+      console.log(error);
+    });
+  }
+
+  public apagaMensagem(codMensagem){
+      var config = JSON.parse(this.perfilProvider.getConfig());
+      this.mural.apagaMensagem(codMensagem).subscribe(
+        data=>{
+          const response = (data as any);
+          this.getMural2();
+          console.log(response);
+        },
+        error=>{
+          console.log(error);
+        }
+      );
+    }
+
   public getMural2() {
     this.showLoader();
     this.mural.getMural().subscribe(
@@ -31,13 +66,6 @@ export class HomePage {
         const response = (data as any);
         const objeto_retorno = JSON.parse(response._body);
         this.listaMural = objeto_retorno;
-        // if (newpage){
-        //   this.lista_filmes = this.lista_filmes.concat(objeto_retorno.results);
-        //   this.infiniteScroll.complete();
-        // }else{
-        //   this.lista_filmes = objeto_retorno.results;
-        // }
-
         console.log(objeto_retorno);
         this.hideLoader();
         if (this.isRefreshing == true) {
@@ -61,14 +89,14 @@ export class HomePage {
     this.getMural2();
   }
 
-  showLoader(){
+  showLoader() {
     this.loader = this.loadingCtrl.create({
       content: "Aguarde..."
     });
     this.loader.present();
   }
 
-  hideLoader(){
+  hideLoader() {
     this.loader.dismiss();
   }
 }

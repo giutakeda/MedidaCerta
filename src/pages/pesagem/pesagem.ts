@@ -90,7 +90,6 @@ export class PesagemPage {
   }
 
   public apagaPesagem(codPesagem){ 
-    alert(codPesagem);
     var config = JSON.parse(this.perfilProvider.getConfig());
     this.pesagemProvider.apagaPesagem(codPesagem).subscribe(
       data=>{

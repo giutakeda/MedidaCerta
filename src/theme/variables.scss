@@ -57,6 +57,7 @@ $tabs-background: color($colors, darker);
 $label-md-text-color-focused: color($colors, secondary);
 $focus-outline-border-color: color($colors, secondary);
 $text-input-md-highlight-color: color($colors, secondary);
+
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
@@ -92,6 +93,8 @@ $tabs-md-tab-color-active: color($colors, ativo);
 // then be future customized. This import comes last
 // so that the above variables are used and Ionic's
 // default are overridden.
+
+
 
 @import "ionic.theme.default";
 

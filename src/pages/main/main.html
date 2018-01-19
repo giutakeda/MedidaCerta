@@ -13,28 +13,28 @@
 <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar>
-        <button ion-button icon-only menuToggle>
-            <ion-icon name="menu"></ion-icon>
-          </button>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
       <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
     <ion-list>
       <button ion-item (click)="openPage(homePage)">
-        Mural
+        <ion-icon name="chatbubbles"></ion-icon> Mural
       </button>
       <button ion-item (click)="openPage(meusDadosPage)">
-        Perfil
+        <ion-icon name="cog"></ion-icon> Meus dados
       </button>
       <button ion-item (click)="openPage(pesagemPage)">
-        Pesagem
+        <ion-icon name="body"></ion-icon> Pesagem
       </button>
       <button ion-item (click)="openPage(rankingPage)">
-        Ranking
+          <ion-icon name="podium"></ion-icon> Ranking
       </button>
       <button ion-item (click)="openPage(graficosPage)">
-        Gráficos
+          <ion-icon name="stats"></ion-icon> Gráficos
       </button>
     </ion-list>
   </ion-content>

@@ -18,6 +18,8 @@ import { PesagemProvider } from '../providers/pesagem/pesagem';
 import { LoginProvider } from '../providers/login/login';
 import { MainPage } from '../pages/main/main';
 import { RankingPage } from '../pages/ranking/ranking';
+import { GraficosProvider } from '../providers/graficos/graficos';
+import { RankingProvider } from '../providers/ranking/ranking';
 
 
 @NgModule({
@@ -54,7 +56,9 @@ import { RankingPage } from '../pages/ranking/ranking';
     MuralProvider,
     PerfilProvider,
     PesagemProvider,
-    LoginProvider
+    LoginProvider,
+    GraficosProvider,
+    RankingProvider
   ]
 })
 export class AppModule {}

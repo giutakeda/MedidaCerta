@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Chart } from 'chart.js';
+import { RankingProvider } from '../../providers/ranking/ranking';
  
 @Component({
   selector: 'page-ranking',
@@ -8,7 +9,9 @@ import { Chart } from 'chart.js';
 })
 
 export class RankingPage {
- 
+  public listaRanking:any = Array();
+
+
   @ViewChild('barCanvas') barCanvas;
   @ViewChild('doughnutCanvas') doughnutCanvas;
   @ViewChild('lineCanvas') lineCanvas;
@@ -17,12 +20,26 @@ export class RankingPage {
   doughnutChart: any;
   lineChart: any;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public rankingProvider: RankingProvider) {
+  }
 
+  ionViewDidEnter(){
+      console.log("aqjk");
+      this.rankingProvider.getRanking().subscribe(
+        data=>{
+            const response = (data as any);
+            this.listaRanking = JSON.parse(response._body);
+            // console.log(body);
+            console.log(this.listaRanking);
+          },
+          error=>{
+            console.log(error);
+          }
+      );
   }
 
   ionViewDidLoad() {
-
+    
       this.barChart = new Chart(this.barCanvas.nativeElement, {
 
           type: 'bar',

@@ -40,16 +40,16 @@
 
     <button ion-button block (click)="abrirDetalhes(filme);">Detalhes</button> -->
   <!-- </ion-card> -->
-  <ion-list *ngFor="let dados of pesagemArr">
-      <ion-item-sliding>
+  <ion-list>
+      <ion-item-sliding *ngFor="let dados of pesagemArr">
         <ion-item class="lista">
             <h1>{{ dados.Data|date: 'dd/MM/yyyy' }}</h1>
             <h2>{{ dados.Peso }} kg</h2>
             <h2>{{ dados.Fat }} %</h2>
         </ion-item>
         <ion-item-options side="right">
-          <button ion-button color="danger">
-            <ion-icon name="trash" (click)="apagaPesagem(dados.CodPesagem);"></ion-icon>
+          <button ion-button color="danger" (click)="apagaPesagem(dados.CodPesagem);">
+            <ion-icon name="trash" ></ion-icon>
             Apagar
           </button>
         </ion-item-options>

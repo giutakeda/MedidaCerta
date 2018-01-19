@@ -1,38 +1,49 @@
 <ion-header>
-    <ion-navbar color="danger">
-      <ion-title>
-        Charts in Ionic 2
-      </ion-title>
-    </ion-navbar>
-  </ion-header>
-   
-  <ion-content>
-   
-      <ion-card>
-        <ion-card-header>
-          Bar Chart
-        </ion-card-header>
-        <ion-card-content>
-          <canvas #barCanvas></canvas>
-        </ion-card-content>
-      </ion-card>
-   
-      <ion-card>
-        <ion-card-header>
-          Doughnut Chart
-        </ion-card-header>
-        <ion-card-content>
-          <canvas #doughnutCanvas></canvas>
-        </ion-card-content>
-      </ion-card>
-   
-      <ion-card>
-        <ion-card-header>
-          Line Chart
-        </ion-card-header>
-        <ion-card-content>
-          <canvas #lineCanvas></canvas>
-        </ion-card-content>
-      </ion-card>
-   
-  </ion-content>
+  <ion-navbar color="primary">
+    <ion-title>
+      Ranking
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <!--ion-grid>
+          <ion-row *ngFor="let dados of listaRanking">
+            <ion-col col-6><h1>{{ dados.posicao }}<br>{{ dados.diferenca }}</h1></ion-col>
+            <ion-col col-6><h2>{{ dados.nomeUsuario }}<br>{{ dados.diaPesagem }}</h2></ion-col>
+          </ion-row>
+        </ion-grid-->
+    <ion-item *ngFor="let dados of listaRanking">
+      <h1>{{ dados.posicao }}<br>{{ dados.diferenca }}</h1>
+      <h2>{{ dados.nomeUsuario }}<br>{{ dados.diaPesagem }}</h2>
+    </ion-item>
+  </ion-list>
+  <ion-card>
+    <ion-card-header>
+      Bar Chart
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #barCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Doughnut Chart
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #doughnutCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Line Chart
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #lineCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
